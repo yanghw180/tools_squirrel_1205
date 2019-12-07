@@ -8,7 +8,8 @@ class Squirrel(models.Model):
     latitude = models.FloatField('Latitude')
 
     squirrel_id = models.CharField(help_text = _('Unique Squirrel ID'),
-        max_length=50)
+        max_length=50,
+        primary_key=True)
 
 
     AM = 'AM'

@@ -23,6 +23,10 @@ class Command(BaseCommand):
             data = list(reader)
 
             for item in data:
+                # incase the squirrel id is duplicate
+                # reference: https://www.cnblogs.com/CQ-LQJ/p/5316314.html
+                if Squirrel.objects.filter(squirrel_id=item['Unique Squirrel ID']).exists():
+                   continue
                 _, created = Squirrel.objects.get_or_create(
                     longitude = float(item['X']),
                     latitude = float(item['Y']),
