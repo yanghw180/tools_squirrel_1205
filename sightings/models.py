@@ -72,6 +72,7 @@ class Squirrel(models.Model):
     specific_location = models.CharField(
         help_text=_('Specific Location'),
         max_length=100,
+        default = UNKNOWN,
     )
 
     running = models.BooleanField(
@@ -102,6 +103,7 @@ class Squirrel(models.Model):
     other_activities = models.CharField(
         help_text = _('Other Activities'),
         max_length=100,
+        default = UNKNOWN,
     )
 
     kuks = models.BooleanField(
