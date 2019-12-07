@@ -45,5 +45,10 @@ def edit_squirrel(request,squirrel_id):
                 }
     return render(request,'sightings/edit.html',context)
 
-
+def stats(request):
+    squirrels = Squirrel.objects.all()
+    context = {
+        'squirrels': squirrels,
+    }
+    return render(request, 'sightings/stats.html', context)
 

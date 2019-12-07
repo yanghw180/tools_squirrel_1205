@@ -1,0 +1,43 @@
+<head>
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+</style>
+</head>
+
+
+<body>
+<h2>General Stats about the Sightings</h2>
+<table>
+  <tr>
+    <th>Unique Squirrel ID</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Date</th>
+    <th>Age</th>
+    <th>Primary Fur Color</th>
+   </tr>
+   {% for squirrel in squirrels %}
+     <tr>
+       <th>{{ squirrel.squirrel_id }}</th>
+       <th>{{ squirrel.latitude }}</th>
+       <th>{{ squirrel.longitude }}</th>
+       <th>{{ squirrel.date }}</th>
+       <th>{{ squirrel.age }}</th>
+       <th>{{ squirrel.color }}</th>
+     </tr>
+   {% endfor %}
+</table>
+</body>
+
+
+

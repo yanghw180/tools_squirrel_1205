@@ -1,4 +1,6 @@
 <ul>
+  <a href="/sightings/add/">Add a new squirrel</a>
+  <h1>All Squirrel Sightings</h1>
   {% for squirrel in squirrels %}
     <li><a href="/sightings/{{ squirrel.squirrel_id }}/">{{ squirrel.squirrel_id  }}</a></li>
   {% endfor %}
