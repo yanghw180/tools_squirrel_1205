@@ -6,17 +6,24 @@ import datetime
 class Command(BaseCommand):
     help = 'A command that can be used to export the squirrel data to a given path'
 
-    def get_model_fields(model):
-        return model._meta.fields
-
     def add_arguments(self, parser):
         parser.add_argument('path', type=str, help='/path/to/file.csv')
+
+    # reference:https://stackoverflow.com/questions/15029666/exporting-items-from-a-model-to-csv-django-python
     def handle(self, *args, **options):
         path = options['path']
         fields = Squirrel._meta.fields
         with open(path, 'w') as csvfile:
             writer = csv.writer(csvfile)
             # write your header first
+            row = []
+            for field in fields:
+                if field.name.lower() == 'squirrel_id':
+                    row.append('Unique Squirrel ID')
+                else:
+                    row.append(field.name.title())
+            writer.writerow(row)
+
             for obj in Squirrel.objects.all():
                 row = []
                 for field in fields:
