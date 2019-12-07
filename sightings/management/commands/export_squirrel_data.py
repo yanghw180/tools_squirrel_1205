@@ -18,18 +18,18 @@ class Command(BaseCommand):
             writer = csv.writer(csvfile)
             # write your header first
             for obj in Squirrel.objects.all():
-                row = ""
+                row = []
                 for field in fields:
                     if isinstance(getattr(obj,field.name),bool):
                         if getattr(obj, field.name) == True:
-                            row += 'TRUE' + ","
+                            row.append('TRUE')
                         elif getattr(obj, field.name) == False:
-                            row += 'FALSE' + ","
+                            row.append( 'FALSE' )
                     elif isinstance(getattr(obj,field.name),int) or isinstance(getattr(obj,field.name),float):
-                        row += str(getattr(obj, field.name)) + ","
+                        row.append( str(getattr(obj, field.name)) )
                     elif isinstance(getattr(obj,field.name),datetime.date):
-                        row += getattr(obj,field.name).strftime("%m%d%Y")
+                        row.append( getattr(obj,field.name).strftime("%m%d%Y") )
                     else:
-                        row += getattr(obj,field.name)
+                        row.append( getattr(obj,field.name) )
                 writer.writerow(row)
         self.stdout.write(self.style.SUCCESS('Successfully export data to %s' % path))
