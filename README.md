@@ -14,5 +14,9 @@ Contributor
 
 Application Link
 =================
-To run our application please use the following link:
+To view our project please use the following link:
 - <https://github.com/yanghw180/tools_squirrel_1205>
+To run our application please visit our website deployed at gcloud:
+https://tools-vm-255500.appspot.com/map
+https://tools-vm-255500.appspot.com/sightings
+
