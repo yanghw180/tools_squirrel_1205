@@ -17,7 +17,10 @@ Application Link
 To view our project please use the following link:
 - <https://github.com/yanghw180/tools_squirrel_1205>
 
-To run our application please visit our website deployed at gcloud:
+To run our project deployed at gcloud:
+- https://tools-vm-255500.appspot.com
+
+To view our two applications, please visit directly to:
 - https://tools-vm-255500.appspot.com/map
 - https://tools-vm-255500.appspot.com/sightings
 
