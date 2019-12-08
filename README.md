@@ -1,8 +1,10 @@
 Project
 =================
-Here is where a brief description of the project should go.
+This project comprises of two applications, sightings and map. 
 
-It may be worthwhile to list major project contributors here, especially if this is a closed source project as one might need to reach out for questions later on.
+For sightings application, users can see the squirrels information in the form and click to see detailed information. Beseides, users could also add or modify the squirrels information.
+
+For map application, users are able to see the visulization of squirrel location.
 
 Contributor
 =================
