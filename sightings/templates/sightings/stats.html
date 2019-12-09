@@ -1,42 +1,12 @@
-<head>
-<style>
-table {
-  width:100%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-</style>
-</head>
-
-
 <body>
-<h2>General Stats about the Sightings</h2>
-<table>
-  <tr>
-    <th>Unique Squirrel ID</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Date</th>
-    <th>Age</th>
-    <th>Primary Fur Color</th>
-   </tr>
-   {% for squirrel in squirrels %}
-     <tr>
-       <th>{{ squirrel.squirrel_id }}</th>
-       <th>{{ squirrel.latitude }}</th>
-       <th>{{ squirrel.longitude }}</th>
-       <th>{{ squirrel.date }}</th>
-       <th>{{ squirrel.age }}</th>
-       <th>{{ squirrel.color }}</th>
-     </tr>
-   {% endfor %}
-</table>
+  <h2>General Stats about the Sightings</h2>
+    <li>The total number of squirrels is: {{squirrels_num}}</li>
+    <li>The number of adult squirrels is: {{Age_Adult}}</li>
+    <li>The number of juvenile squirrels is: {{Age_Juvenile}}</h3>
+    <li>The number of squirrels that are running is: {{Running_num}}</h3>
+    <li>The number of squirrels that are chasing is: {{Chasing_num}}</li>
+    <li>The number of squirrels that are climbing is: {{Climbing_num}}</li>
+    <li>The number of squirrels that are eating is: {{Eating_num}}</li>
 </body>
 
 

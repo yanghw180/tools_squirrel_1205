@@ -1,7 +1,42 @@
-<ul>
-  <a href="/sightings/add/">Add a new squirrel</a>
-  <h1>All Squirrel Sightings</h1>
-  {% for squirrel in squirrels %}
-    <li><a href="/sightings/{{ squirrel.squirrel_id }}/">{{ squirrel.squirrel_id  }}</a></li>
-  {% endfor %}
-</ul>
+<head>
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+</style>
+</head>
+
+
+<body>
+<h2><a href="/sightings/add/">Add a New Squirrel</a></h2>
+<h2>All Squirrel Sightings</h2>
+<table>
+  <tr>
+    <th>Unique Squirrel ID</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Date</th>
+    <th>Age</th>
+    <th>Primary Fur Color</th>
+   </tr>
+   {% for squirrel in squirrels %}
+     <tr>
+       <th><a href="/sightings/{{ squirrel.squirrel_id }}">{{ squirrel.squirrel_id }}</a></th>
+       <th>{{ squirrel.latitude }}</th>
+       <th>{{ squirrel.longitude }}</th>
+       <th>{{ squirrel.date }}</th>
+       <th>{{ squirrel.age }}</th>
+       <th>{{ squirrel.color }}</th>
+     </tr>
+   {% endfor %}
+</table>
+</body>
+
