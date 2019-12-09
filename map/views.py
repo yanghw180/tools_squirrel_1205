@@ -7,7 +7,9 @@ from sightings.models import Squirrel
 
 def map(request):
     sightings = Squirrel.objects.all()
-    context = {'sightings': sightings}
+    # plot 100 squirrel location
+    sightings_show = sightings[:100]
+    context = {'sightings': sightings_show}
     return render(request, 'map.html', context)
 
 # Create your views here.
